@@ -1,0 +1,6 @@
+{
+  "name": "L'Écho du Flibustier",
+  "description": "Une application de lecture immersive d'histoires de pirates avec illustrations sonores, bruits d'ambiance et narration vocale par IA.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

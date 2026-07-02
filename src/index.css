@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+/* Custom Pirate & Immersive Theme Styles */
+@layer utilities {
+  .font-cinzel {
+    font-family: 'Cinzel', Georgia, serif;
+  }
+  .font-cinzel-dec {
+    font-family: 'Cinzel Decorative', Georgia, serif;
+  }
+  .font-garamond {
+    font-family: 'EB Garamond', Georgia, serif;
+  }
+}
+
+/* Custom Webkit scrollbar for parchment and sea elements */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090a0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2c271b;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #473e28;
+}
+
+/* Keyframes for ambient sea movement */
+@keyframes ocean-drift {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-1%, 1%) scale(1.05);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes fog-drift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes lantern-flicker {
+  0%, 100% {
+    opacity: 0.85;
+    box-shadow: 0 0 15px rgba(226, 216, 190, 0.15);
+  }
+  30% {
+    opacity: 0.95;
+    box-shadow: 0 0 25px rgba(226, 216, 190, 0.25);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 12px rgba(226, 216, 190, 0.12);
+  }
+  75% {
+    opacity: 1;
+    box-shadow: 0 0 30px rgba(226, 216, 190, 0.3);
+  }
+}
+
+@keyframes heartbeat-glow {
+  0%, 100% {
+    text-shadow: 0 0 4px rgba(226, 216, 190, 0.4);
+    opacity: 0.9;
+  }
+  50% {
+    text-shadow: 0 0 15px rgba(226, 216, 190, 0.8);
+    opacity: 1;
+  }
+}
+
+/* Custom utility classes */
+.animate-ocean {
+  animation: ocean-drift 20s ease-in-out infinite;
+}
+
+.animate-lantern {
+  animation: lantern-flicker 4s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: heartbeat-glow 3s ease-in-out infinite;
+}
+
+/* Aged Parchment Paper Texture Overlay */
+.parchment-texture {
+  background-color: #f2ebd4;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.15) 0%, rgba(0,0,0,0.15) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.07 0'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.55'/%3E%3C/svg%3E");
+  box-shadow: inset 0 0 100px rgba(44, 39, 27, 0.85);
+}
+
+.parchment-dark {
+  background-color: #12131a;
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.02) 0%, rgba(0,0,0,0.5) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.7'/%3E%3C/svg%3E");
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.95);
+}
